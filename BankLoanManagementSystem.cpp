@@ -41,3 +41,26 @@ private:
         return calculateMonthlyPayment() * term;
     }
 };
+
+// Class to represent the Bank
+class Bank
+{
+public:
+    void addLoan(const Loan &loan)
+    {
+        loans.push_back(loan);
+    }
+
+    void displayLoans() const
+    {
+        if (loans.empty())
+        {
+            cout << "No loans available." << endl;
+            return;
+        }
+
+        for (const auto &loan : loans)
+        {
+            loan.displayLoanInfo();
+        }
+    }
