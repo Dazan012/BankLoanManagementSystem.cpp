@@ -64,3 +64,7 @@ public:
             loan.displayLoanInfo();
         }
     }
+
+private:
+    vector<Loan> loans; // List of loans
+};
