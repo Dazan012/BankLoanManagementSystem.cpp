@@ -68,3 +68,20 @@ public:
 private:
     vector<Loan> loans; // List of loans
 };
+
+int main()
+{
+    Bank myBank;
+
+    // Sample data
+    myBank.addLoan(Loan("Alice Johnson", 5000.00, 5.0, 24));
+    myBank.addLoan(Loan("Bob Smith", 15000.00, 4.5, 36));
+    myBank.addLoan(Loan("Charlie Brown", 20000.00, 6.0, 48));
+
+    cout << "Bank Loan Management System" << endl;
+    cout << "----------------------------------------" << endl;
+
+    myBank.displayLoans();
+
+    return 0;
+}
