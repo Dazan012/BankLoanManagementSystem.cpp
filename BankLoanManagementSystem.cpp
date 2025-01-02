@@ -23,3 +23,21 @@ public:
         cout << "Total Payment: $" << fixed << setprecision(2) << calculateTotalPayment() << endl;
         cout << "----------------------------------------" << endl;
     }
+
+private:
+    string customerName;
+    double amount;       // Principal amount
+    double interestRate; // Annual interest rate
+    int term;            // Term in months
+
+    double calculateMonthlyPayment() const
+    {
+        double monthlyRate = interestRate / 100 / 12; // Convert annual rate to monthly
+        return (amount * monthlyRate) / (1 - pow(1 + monthlyRate, -term));
+    }
+
+    double calculateTotalPayment() const
+    {
+        return calculateMonthlyPayment() * term;
+    }
+};
